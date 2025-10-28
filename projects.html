@@ -32,9 +32,7 @@
       text-decoration: none;
       font-weight: 700;
     }
-    nav a:hover {
-      color: #D6C179;
-    }
+    nav a:hover { color: #D6C179; }
     nav select {
       background: #444;
       border: none;
@@ -43,7 +41,7 @@
     }
     .hero {
       text-align: center;
-      padding: 100px 20px;
+      padding: 80px 20px;
       background: linear-gradient(135deg, #D6C179, #FF3E3E);
       color: white;
     }
@@ -55,37 +53,33 @@
     .hero p {
       font-size: 1.2rem;
     }
-    .projects {
+    .project-section {
       width: 90%;
       max-width: 1000px;
       margin: 50px auto;
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
-    }
-    .project {
       background: white;
+      padding: 30px;
       border-radius: 15px;
-      padding: 25px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease;
+      margin-bottom: 30px;
     }
-    .project:hover {
-      transform: scale(1.02);
-    }
-    .project h2 {
+    .project-section h2 {
       font-family: 'Oxanium', sans-serif;
-      font-size: 1.8rem;
-      margin-bottom: 10px;
+      font-size: 2rem;
+      margin-bottom: 15px;
       background: linear-gradient(to right, #D6C179, #FF3E3E);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .project p {
-      margin: 8px 0;
-      color: #555;
+    .project-section p {
+      line-height: 1.6;
+      margin-bottom: 10px;
     }
-    .project a {
+    .status {
+      font-weight: bold;
+      color: #D6C179;
+    }
+    .project-section a {
       display: inline-block;
       margin-top: 10px;
       text-decoration: none;
@@ -96,7 +90,7 @@
       font-weight: bold;
       transition: background 0.3s;
     }
-    .project a:hover {
+    .project-section a:hover {
       background: #D6C179;
       color: #2B2B2B;
     }
@@ -112,71 +106,69 @@
 </head>
 <body>
 
-  <nav>
-    <h1>Vtr_Lab</h1>
-    <div>
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
-      <select id="projectSelect">
-        <option value="">-- Select Project --</option>
-        <option value="arm.html">ESP32 Robotic Arm</option>
-        <option value="temp_sensor.html">Temperature Sensor Demo</option>
-        <option value="light_follow.html">Light Following Robot</option>
-        <option value="obstacle_rover.html">Obstacle Avoidance Rover</option>
-        <option value="servo_gripper.html">Servo Controlled Gripper</option>
-      </select>
-    </div>
-  </nav>
+<nav>
+  <h1>Vtr_Lab</h1>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+    <select id="projectSelect">
+      <option value="">-- Select Project --</option>
+      <option value="arm.html">ESP32 Robotic Arm</option>
+      <option value="temp_sensor.html">Temperature Sensor Demo</option>
+      <option value="light_follow.html">Light Following Robot</option>
+      <option value="obstacle_rover.html">Obstacle Avoidance Rover</option>
+      <option value="servo_gripper.html">Servo Controlled Gripper</option>
+    </select>
+  </div>
+</nav>
 
-  <section class="hero">
-    <h1>Projects Showcase</h1>
-    <p>Explore the robotics and automation projects built at Vtr_Lab.</p>
-  </section>
+<section class="hero">
+  <h1>Projects Showcase</h1>
+  <p>Explore all robotics & mechatronics projects developed at Vtr_Lab.</p>
+</section>
 
-  <section class="projects">
-    <div class="project">
-      <h2>ESP32 Robotic Arm</h2>
-      <p>Status: ✅ Completed</p>
-      <p>An articulated 4-DOF robotic arm powered by ESP32, featuring servo control and wireless operation.</p>
-      <a href="arm.html">View Project</a>
-    </div>
+<section class="project-section">
+  <h2>ESP32 Robotic Arm</h2>
+  <p class="status">Status: ✅ Completed</p>
+  <p>A multi-axis robotic arm powered by ESP32 with servo control and wireless functionality.</p>
+  <a href="arm.html">View Project</a>
+</section>
 
-    <div class="project">
-      <h2>Temperature Sensor Demo</h2>
-      <p>Status: 🚧 Not Started</p>
-      <p>Demonstration of sensor integration and data reading using DHT11 and ESP32.</p>
-    </div>
+<section class="project-section">
+  <h2>Temperature Sensor Demo</h2>
+  <p class="status">Status: 🚧 Not Started</p>
+  <p>Demonstrates sensor integration and real-time data display using DHT11 and ESP32.</p>
+</section>
 
-    <div class="project">
-      <h2>Light Following Robot</h2>
-      <p>Status: 🧠 Not Started</p>
-      <p>Robot that follows a light source using LDRs and PID control for directional tracking.</p>
-    </div>
+<section class="project-section">
+  <h2>Light Following Robot</h2>
+  <p class="status">Status: 🚧 Not Started</p>
+  <p>Robot that tracks and follows light sources using LDRs and PID-based directional control.</p>
+</section>
 
-    <div class="project">
-      <h2>Obstacle Avoidance Rover</h2>
-      <p>Status: ⚙️ Not Started</p>
-      <p>Autonomous rover with ultrasonic sensors that detects and avoids obstacles.</p>
-    </div>
+<section class="project-section">
+  <h2>Obstacle Avoidance Rover</h2>
+  <p class="status">Status: 🚧 Not Started</p>
+  <p>Autonomous rover using ultrasonic sensors to detect and avoid obstacles.</p>
+</section>
 
-    <div class="project">
-      <h2>Servo Controlled Gripper</h2>
-      <p>Status: 🛠️ Not Started</p>
-      <p>A servo-actuated end-effector designed for object grasping and manipulation.</p>
-    </div>
-  </section>
+<section class="project-section">
+  <h2>Servo Controlled Gripper</h2>
+  <p class="status">Status: 🚧 Not Started</p>
+  <p>End-effector designed for object grasping using servo-actuated fingers.</p>
+</section>
 
-  <footer>
-    <p>&copy; 2025 Vtr_Lab | All Rights Reserved</p>
-  </footer>
+<footer>
+  <p>&copy; 2025 Vtr_Lab | All Rights Reserved</p>
+</footer>
 
-  <script>
-  const select = document.getElementById('projectSelect');
-  select.addEventListener('change', function(){
-    if(this.value) window.location.href = this.value;
-  });
-  </script>
+<script>
+const select = document.getElementById('projectSelect');
+select.addEventListener('change', function(){
+  if(this.value) window.location.href = this.value;
+});
+</script>
 
 </body>
 </html>
