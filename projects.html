@@ -3,149 +3,110 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vtr_Lab | Projects</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
+  <title>Projects - Vtr_Lab</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Roboto', sans-serif;
-      background: #fef8ec; /* sand yellow background */
       margin: 0;
-      color: #222;
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0b0b0b;
+      color: sandybrown;
     }
 
-    nav {
+    header {
+      background-color: #1a1a1a;
+      color: sandybrown;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: #b22222; /* deep red navbar */
-      padding: 15px 30px;
+      padding: 15px 40px;
     }
-    nav h1 {
-      color: #fef8ec;
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.7rem;
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5em;
+      color: #ff5555;
     }
+
     nav a {
-      color: #fef8ec;
+      color: sandybrown;
+      margin-left: 20px;
       text-decoration: none;
-      font-weight: 700;
-      margin-left: 15px;
+      transition: color 0.3s;
     }
+
     nav a:hover {
-      text-decoration: underline;
+      color: #ff5555;
     }
 
-    .container {
-      width: 90%;
-      max-width: 1000px;
-      margin: 40px auto;
+    main {
+      padding: 60px 20px;
+      text-align: center;
     }
 
-    h2 {
-      font-family: 'Orbitron', sans-serif;
-      color: #b22222;
-      text-transform: uppercase;
+    .project {
+      background-color: #1a1a1a;
+      margin: 20px auto;
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 700px;
+      box-shadow: 0 0 15px #ff5555;
     }
 
-    .project-card {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      padding: 20px;
-      margin-bottom: 25px;
-      transition: transform 0.2s ease;
-    }
-    .project-card:hover {
-      transform: scale(1.02);
+    .project h2 {
+      color: #ff5555;
     }
 
-    .project-card h3 {
-      color: #b22222;
-      margin-top: 0;
-    }
-
-    .status {
-      font-weight: bold;
-      color: #b22222;
-      background: #fef8ec;
-      padding: 5px 10px;
-      border-radius: 8px;
+    .button {
       display: inline-block;
-      margin-bottom: 10px;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #b22222;
-      color: #fef8ec;
+      margin-top: 10px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: 2px solid #ff5555;
+      color: sandybrown;
       text-decoration: none;
-      padding: 8px 14px;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-    .btn:hover {
-      background: #8b1a1a;
+      transition: all 0.3s;
     }
 
+    .button:hover {
+      background-color: #ff5555;
+      color: #0b0b0b;
+    }
   </style>
 </head>
 <body>
-
-  <nav>
+  <header>
     <h1>Vtr_Lab</h1>
-    <div>
+    <nav>
       <a href="index.html">Home</a>
       <a href="projects.html">Projects</a>
       <a href="contact.html">Contact</a>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
-  <div class="container">
-    <h2>Project Gallery</h2>
+  <main>
+    <h1>My Projects</h1>
 
-    <!-- Project 1 -->
-    <div class="project-card">
-      <h3>ESP32 Robotic Arm</h3>
-      <p>A 5-DOF robotic arm powered by MG996R servos and controlled by an ESP32 board.</p>
-      <a href="project1.html" class="btn">View Project</a>
-    </div>
-
-    <!-- Project 2 -->
-    <div class="project-card">
-      <h3>Temperature Sensor Demo</h3>
-      <p class="status">Status: In Progress 🔧</p>
-      <p>This project explores environmental sensing using DHT22 sensors and ESP32 data logging.</p>
-      <a href="project2.html" class="btn">View Project</a>
+    <div class="project">
+      <h2>Robotic Arm</h2>
+      <p>Status: ✅ In Progress</p>
+      <p>A multi-axis servo-driven robotic arm designed for precise movement control.</p>
+      <a href="arm.html" class="button">View Project</a>
     </div>
 
-    <!-- Project 3 -->
-    <div class="project-card">
-      <h3>Light Following Robot</h3>
-      <p class="status">Status: Planned 🧠</p>
-      <p>A robot that uses LDR sensors to detect and follow a light source.</p>
-      <a href="project3.html" class="btn">View Project</a>
+    <div class="project">
+      <h2>Autonomous Robot Car</h2>
+      <p>Status: 🚧 Not Started</p>
+      <p>A self-driving robot car project exploring obstacle avoidance and pathfinding.</p>
+      <a href="robotcar.html" class="button">View Project</a>
     </div>
 
-    <!-- Project 4 -->
-    <div class="project-card">
-      <h3>Obstacle Avoidance Rover</h3>
-      <p class="status">Status: Coming Soon 🚧</p>
-      <p>Ultrasonic-based rover designed to navigate autonomously while avoiding obstacles.</p>
-      <a href="project4.html" class="btn">View Project</a>
+    <div class="project">
+      <h2>Sensor Integration System</h2>
+      <p>Status: 🧩 Planning Phase</p>
+      <p>A platform for integrating multiple environmental sensors for automation.</p>
+      <a href="sensor.html" class="button">View Project</a>
     </div>
-
-    <!-- Project 5 -->
-    <div class="project-card">
-      <h3>Servo Controlled Gripper</h3>
-      <p class="status">Status: Planned ⚙️</p>
-      <p>A simple servo-driven gripper for object manipulation, part of future robotic extensions.</p>
-      <a href="project5.html" class="btn">View Project</a>
-    </div>
-
-  </div>
-
+  </main>
 </body>
 </html>
