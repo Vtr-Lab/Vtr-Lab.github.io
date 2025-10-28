@@ -1,142 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects - Vtr_Lab</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vtr_Lab | Projects</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Roboto', sans-serif;
-      background-color: #1a1a1a;
-      color: #f5deb3; /* sand yellow */
       margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #b22222; /* dark red */
-      color: white;
-      text-align: center;
-      padding: 15px 0;
-      font-size: 24px;
-      font-weight: 700;
-      letter-spacing: 1px;
+      background: #F8F8F8;
+      color: #2B2B2B;
     }
     nav {
-      background-color: #222;
       display: flex;
-      justify-content: center;
-      padding: 10px 0;
+      justify-content: space-between;
+      align-items: center;
+      background: #2B2B2B;
+      padding: 15px 30px;
     }
-    nav a {
-      color: #f5deb3;
+    nav h1 {
+      font-family: 'Oxanium', sans-serif;
+      color: #D6C179;
+      font-size: 1.8rem;
+      margin: 0;
+    }
+    nav a, nav select {
+      font-family: 'Roboto', sans-serif;
+      color: #F8F8F8;
+      margin-left: 15px;
       text-decoration: none;
-      margin: 0 15px;
-      font-weight: 500;
-      transition: color 0.3s;
+      font-weight: 700;
     }
     nav a:hover {
-      color: #ffcc00;
+      color: #D6C179;
     }
-    .project-list {
+    nav select {
+      background: #444;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+    }
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(135deg, #D6C179, #FF3E3E);
+      color: white;
+    }
+    .hero h1 {
+      font-family: 'Oxanium', sans-serif;
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+    }
+    .projects {
+      width: 90%;
+      max-width: 1000px;
+      margin: 50px auto;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      padding: 40px 20px;
+      gap: 25px;
     }
     .project {
-      background-color: #2b2b2b;
-      border-radius: 10px;
-      width: 80%;
-      max-width: 600px;
-      padding: 20px;
-      margin-bottom: 25px;
-      box-shadow: 0 0 10px rgba(255, 215, 0, 0.1);
+      background: white;
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    .project:hover {
+      transform: scale(1.02);
     }
     .project h2 {
-      color: #ffcc00;
+      font-family: 'Oxanium', sans-serif;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      background: linear-gradient(to right, #D6C179, #FF3E3E);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     .project p {
-      color: #f5deb3;
+      margin: 8px 0;
+      color: #555;
     }
     .project a {
       display: inline-block;
       margin-top: 10px;
-      padding: 8px 16px;
-      background-color: #b22222;
-      color: white;
-      border-radius: 5px;
       text-decoration: none;
-      transition: background-color 0.3s;
+      background: #FF3E3E;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s;
     }
     .project a:hover {
-      background-color: #ff4500;
+      background: #D6C179;
+      color: #2B2B2B;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      background: #2B2B2B;
+      color: #F8F8F8;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-  <header>Vtr_Lab Projects</header>
+
   <nav>
-    <a href="index.html">Home</a>
-    <a href="projects.html">Projects</a>
-    <a href="contact.html">Contact</a>
+    <h1>Vtr_Lab</h1>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+      <select id="projectSelect">
+        <option value="">-- Select Project --</option>
+        <option value="arm.html">ESP32 Robotic Arm</option>
+        <option value="temp_sensor.html">Temperature Sensor Demo</option>
+        <option value="light_follow.html">Light Following Robot</option>
+        <option value="obstacle_rover.html">Obstacle Avoidance Rover</option>
+        <option value="servo_gripper.html">Servo Controlled Gripper</option>
+      </select>
+    </div>
   </nav>
 
-  <div class="project-list">
-    <!-- Completed -->
+  <section class="hero">
+    <h1>Projects Showcase</h1>
+    <p>Explore the robotics and automation projects built at Vtr_Lab.</p>
+  </section>
+
+  <section class="projects">
     <div class="project">
-      <h2>Robotic Arm</h2>
+      <h2>ESP32 Robotic Arm</h2>
       <p>Status: ✅ Completed</p>
+      <p>An articulated 4-DOF robotic arm powered by ESP32, featuring servo control and wireless operation.</p>
       <a href="arm.html">View Project</a>
     </div>
 
-    <!-- Not started / In progress -->
     <div class="project">
-      <h2>Autonomous Vehicle</h2>
-      <p>Status: 🧠 Not Started</p>
-    </div>
-
-    <div class="project">
-      <h2>Self-Balancing Robot</h2>
-      <p>Status: 🛠️ Not Started</p>
-    </div>
-
-    <div class="project">
-      <h2>AI Vision Tracking System</h2>
-      <p>Status: 🔬 Not Started</p>
-    </div>
-
-    <div class="project">
-      <h2>Quadruped Robot</h2>
-      <p>Status: ⚙️ Not Started</p>
-    </div>
-
-    <div class="project">
-      <h2>Gesture-Controlled Arm</h2>
+      <h2>Temperature Sensor Demo</h2>
       <p>Status: 🚧 Not Started</p>
+      <p>Demonstration of sensor integration and data reading using DHT11 and ESP32.</p>
     </div>
 
     <div class="project">
-      <h2>Smart Sensor System</h2>
-      <p>Status: 🧩 Not Started</p>
+      <h2>Light Following Robot</h2>
+      <p>Status: 🧠 Not Started</p>
+      <p>Robot that follows a light source using LDRs and PID control for directional tracking.</p>
     </div>
 
     <div class="project">
-      <h2>Mini Drone Platform</h2>
-      <p>Status: 🕹️ Not Started</p>
+      <h2>Obstacle Avoidance Rover</h2>
+      <p>Status: ⚙️ Not Started</p>
+      <p>Autonomous rover with ultrasonic sensors that detects and avoids obstacles.</p>
     </div>
 
     <div class="project">
-      <h2>Voice-Controlled Assistant Bot</h2>
-      <p>Status: 🎤 Not Started</p>
+      <h2>Servo Controlled Gripper</h2>
+      <p>Status: 🛠️ Not Started</p>
+      <p>A servo-actuated end-effector designed for object grasping and manipulation.</p>
     </div>
+  </section>
 
-    <div class="project">
-      <h2>3D Printed CNC Machine</h2>
-      <p>Status: 🧰 Not Started</p>
-    </div>
+  <footer>
+    <p>&copy; 2025 Vtr_Lab | All Rights Reserved</p>
+  </footer>
 
-  </div>
+  <script>
+  const select = document.getElementById('projectSelect');
+  select.addEventListener('change', function(){
+    if(this.value) window.location.href = this.value;
+  });
+  </script>
+
 </body>
 </html>
-
