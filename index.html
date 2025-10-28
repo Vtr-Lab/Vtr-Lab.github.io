@@ -47,4 +47,57 @@
     }
     .project p {
       font-size: 1rem;
-      m
+      margin-bottom: 15px;
+    }
+    iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: none;
+      border-radius: 10px;
+    }
+    .button {
+      display: inline-block;
+      padding: 10px 15px;
+      border-radius: 8px;
+      background: #4facfe;
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+    .button:hover {
+      background: #00f2fe;
+    }
+  </style>
+</head>
+<body>
+  <h1>Victor’s Robotics Projects</h1>
+  <p>Welcome! Here I share my mechatronics and ESP32-based robotic arm builds.</p>
+
+  <div class="project-container" id="projects">
+    <!-- Projects will be loaded here dynamically -->
+  </div>
+
+  <script>
+    // Load projects from JSON
+    fetch('projects.json')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('projects');
+        data.forEach(p => {
+          const div = document.createElement('div');
+          div.className = 'project';
+          div.innerHTML = `
+            <h2>${p.title}</h2>
+            <p>${p.description}</p>
+            ${p.video ? `<iframe src="${p.video}" allowfullscreen></iframe>` : ''}
+            ${p.download ? `<a href="${p.download}" class="button" download>Download Files</a>` : ''}
+          `;
+          container.appendChild(div);
+        });
+      })
+      .catch(err => console.error('Error loading projects:', err));
+  </script>
+</body>
+</html>
+
