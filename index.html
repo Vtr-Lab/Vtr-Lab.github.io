@@ -7,116 +7,89 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family: 'Roboto', sans-serif; background:#f4f4f9; color:#333; line-height:1.6; }
-  a { text-decoration:none; color:inherit; }
-  img { max-width:100%; border-radius:10px; }
-  .container { width:90%; max-width:1200px; margin:0 auto; padding:20px 0; }
-
-  nav { display:flex; justify-content:center; padding:20px; background:#2b2b2b; }
-  nav a { color:white; margin:0 15px; font-weight:700; transition:0.3s; }
-  nav a:hover { color:#4facfe; }
-
-  .hero { display:flex; flex-direction:column; justify-content:center; align-items:center; height:50vh; background:linear-gradient(135deg,#4facfe,#00f2fe); color:white; text-align:center; }
+  body { font-family:'Roboto',sans-serif; background:#f4f4f9; color:#333; }
+  nav { display:flex; justify-content:space-between; align-items:center; background:#2b2b2b; padding:15px 30px; }
+  nav h1 { color:white; font-size:1.5rem; }
+  nav select { padding:8px 12px; font-size:1rem; border-radius:5px; border:none; }
+  .hero { text-align:center; padding:80px 20px; background:linear-gradient(135deg,#4facfe,#00f2fe); color:white; }
   .hero h1 { font-size:3rem; margin-bottom:10px; }
   .hero p { font-size:1.2rem; }
-
-  .project-selector { text-align:center; margin:30px 0; }
-  select { padding:10px 15px; font-size:1rem; border-radius:8px; border:1px solid #ccc; }
-
-  .project-container { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:25px; }
-  .project { background:white; padding:20px; border-radius:15px; box-shadow:0 4px 15px rgba(0,0,0,0.1); transition:0.5s; position:relative; overflow:hidden; }
-  .project::before { content:''; position:absolute; top:0; left:0; width:100%; height:100%; background:linear-gradient(120deg,rgba(79,172,254,0.3),rgba(0,242,254,0.3)); opacity:0; transition:0.5s; }
-  .project:hover::before { opacity:1; }
-  .project:hover { transform:translateY(-7px); }
-
-  .project h2 { font-size:1.5rem; margin-bottom:10px; background:linear-gradient(to right,#4facfe,#00f2fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .container { width:90%; max-width:1200px; margin:50px auto; }
+  .projects-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:25px; }
+  .project { background:white; padding:20px; border-radius:15px; box-shadow:0 4px 15px rgba(0,0,0,0.1); transition:0.5s; }
+  .project:hover { transform:translateY(-5px); }
+  .project h2 { font-size:1.4rem; margin-bottom:10px; background:linear-gradient(to right,#4facfe,#00f2fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
   .project p { margin-bottom:15px; }
-  .project iframe { width:100%; aspect-ratio:16/9; border:none; border-radius:10px; margin-bottom:10px; }
-  .button { display:inline-block; padding:10px 15px; border-radius:8px; background:#4facfe; color:white; font-weight:700; transition:0.3s; }
+  .button { display:inline-block; padding:10px 15px; border-radius:8px; background:#4facfe; color:white; font-weight:700; transition:0.3s; text-decoration:none; }
   .button:hover { background:#00f2fe; }
-
   footer { text-align:center; padding:20px; margin-top:40px; background:#2b2b2b; color:white; }
 </style>
 </head>
 <body>
 
-<!-- NAVIGATION -->
+<!-- NAVBAR -->
 <nav>
-  <a href="#hero">Home</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
+  <h1>Victor’s Robotics</h1>
+  <select id="projectSelect">
+    <option value="">-- Select Project --</option>
+    <option value="project1.html">ESP32 Robotic Arm</option>
+    <option value="project2.html">Temperature Sensor Demo</option>
+    <option value="project3.html">Light Following Robot</option>
+    <option value="project4.html">Obstacle Avoidance Rover</option>
+    <option value="project5.html">Servo Controlled Gripper</option>
+  </select>
 </nav>
 
-<!-- HERO -->
-<section class="hero" id="hero">
-  <h1>Victor’s Robotics Portfolio</h1>
-  <p>ESP32-based robotic arm and mechatronics projects</p>
+<!-- HERO SECTION -->
+<section class="hero">
+  <h1>Welcome to My Robotics Portfolio</h1>
+  <p>Explore ESP32 and mechatronics projects below.</p>
 </section>
 
-<!-- PROJECT SELECTION -->
-<div class="container project-selector">
-  <label for="projectSelect"><strong>Select a project:</strong></label>
-  <select id="projectSelect">
-    <option value="">-- Choose a project --</option>
-  </select>
-</div>
-
-<!-- PROJECTS -->
+<!-- PROJECT PREVIEW CARDS -->
 <div class="container">
-  <h2 id="projects" style="text-align:center; margin-bottom:30px;">My Projects</h2>
-  <div class="project-container" id="projects-container"></div>
+  <h2 style="text-align:center; margin-bottom:30px;">My Projects</h2>
+  <div class="projects-list" id="projectsContainer">
+    <!-- Project cards preview -->
+  </div>
 </div>
 
-<!-- FOOTER -->
-<footer id="contact">
+<footer>
   <p>Contact me: <a href="mailto:your@email.com">your@email.com</a></p>
   <p>&copy; 2025 Victor</p>
 </footer>
 
 <script>
-// PROJECT DATA
+// Define projects array
 const projects = [
-  { title:"ESP32 Robotic Arm", description:"5-DOF robotic arm powered by MG996R servos.", video:"https://www.youtube.com/embed/VIDEO_ID", download:"" },
-  { title:"Temperature Sensor Demo", description:"ESP32 reading temperature and humidity.", video:"https://www.youtube.com/embed/ANOTHER_VIDEO_ID", download:"" },
-  { title:"Light Following Robot", description:"Small robot that follows a light source using LDRs.", video:"https://www.youtube.com/embed/YET_ANOTHER_ID", download:"" },
-  { title:"Obstacle Avoidance Rover", description:"Autonomous rover using ultrasonic sensors to avoid obstacles.", video:"https://www.youtube.com/embed/OBSTACLE_ID", download:"" },
-  { title:"Servo Controlled Gripper", description:"Gripper controlled via ESP32 and mobile app.", video:"https://www.youtube.com/embed/GRIPPER_ID", download:"" }
+  { title:"ESP32 Robotic Arm", description:"5-DOF robotic arm powered by MG996R servos.", page:"project1.html" },
+  { title:"Temperature Sensor Demo", description:"ESP32 reading temperature and humidity.", page:"project2.html" },
+  { title:"Light Following Robot", description:"Small robot that follows a light source using LDRs.", page:"project3.html" },
+  { title:"Obstacle Avoidance Rover", description:"Autonomous rover using ultrasonic sensors to avoid obstacles.", page:"project4.html" },
+  { title:"Servo Controlled Gripper", description:"Gripper controlled via ESP32 and mobile app.", page:"project5.html" }
 ];
 
-// RENDER PROJECTS
-const container = document.getElementById('projects-container');
-const select = document.getElementById('projectSelect');
-
-projects.forEach((p, index) => {
-  // Create project card
+// Render project cards
+const container = document.getElementById('projectsContainer');
+projects.forEach(p => {
   const div = document.createElement('div');
   div.className = 'project';
-  div.id = `project-${index}`;
   div.innerHTML = `
     <h2>${p.title}</h2>
     <p>${p.description}</p>
-    ${p.video ? `<iframe src="${p.video}" allowfullscreen></iframe>` : ''}
-    ${p.download ? `<a href="${p.download}" class="button" download>Download Files</a>` : ''}
+    <a href="${p.page}" class="button">View Project</a>
   `;
   container.appendChild(div);
-
-  // Add option to dropdown
-  const option = document.createElement('option');
-  option.value = div.id;
-  option.textContent = p.title;
-  select.appendChild(option);
 });
 
-// DROPDOWN NAVIGATION
+// Dropdown navigation
+const select = document.getElementById('projectSelect');
 select.addEventListener('change', function() {
-  const projectId = this.value;
-  if(projectId) {
-    document.getElementById(projectId).scrollIntoView({behavior:"smooth"});
+  if(this.value) {
+    window.location.href = this.value; // Navigate to selected project page
   }
 });
 </script>
 
 </body>
 </html>
-
-
