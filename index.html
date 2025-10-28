@@ -1,25 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vtr_Lab | Home</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<style>
-body { font-family:'Roboto',sans-serif; margin:0; background:#f4f4f9; color:#333; }
-nav { display:flex; justify-content:space-between; align-items:center; background:#2b2b2b; padding:15px 30px; }
-nav h1 { color:white; font-size:1.5rem; }
-nav a, nav select { color:white; font-weight:700; margin-left:15px; text-decoration:none; }
-nav select { background:#444; border:none; padding:8px 12px; border-radius:5px; }
-.hero { text-align:center; padding:80px 20px; background:linear-gradient(135deg,#4facfe,#00f2fe); color:white; }
-.hero h1 { font-size:3rem; margin-bottom:10px; }
-.hero p { font-size:1.2rem; }
-.section { width:90%; max-width:1000px; margin:50px auto; background:white; padding:30px; border-radius:15px; box-shadow:0 4px 15px rgba(0,0,0,0.1); }
-.section img { max-width:200px; float:right; margin-left:20px; border-radius:15px; }
-.section h2 { font-size:2rem; margin-bottom:15px; background:linear-gradient(to right,#4facfe,#00f2fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-.section p { line-height:1.6; }
-.clearfix::after { content:""; display:table; clear:both; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vtr_Lab | Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background: #F8F8F8;
+      color: #2B2B2B;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2B2B2B;
+      padding: 15px 30px;
+    }
+    nav h1 {
+      font-family: 'Oxanium', sans-serif;
+      color: #D6C179;
+      font-size: 1.8rem;
+      margin: 0;
+    }
+    nav a, nav select {
+      font-family: 'Roboto', sans-serif;
+      color: #F8F8F8;
+      margin-left: 15px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    nav select {
+      background: #444;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+    }
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(135deg, #D6C179, #FF3E3E);
+      color: white;
+    }
+    .hero h1 {
+      font-family: 'Oxanium', sans-serif;
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+    }
+    .section {
+      width: 90%;
+      max-width: 1000px;
+      margin: 50px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .section img {
+      max-width: 200px;
+      float: right;
+      margin-left: 20px;
+      border-radius: 15px;
+    }
+    .section h2 {
+      font-family: 'Oxanium', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 15px;
+      background: linear-gradient(to right, #D6C179, #FF3E3E);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .section p {
+      line-height: 1.6;
+    }
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      background: #2B2B2B;
+      color: #F8F8F8;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
 
@@ -42,25 +114,28 @@ nav select { background:#444; border:none; padding:8px 12px; border-radius:5px; 
 
 <section class="hero">
   <h1>Welcome to Vtr_Lab</h1>
-  <p>Explore ESP32 and mechatronics projects built with passion.</p>
+  <p>Explore my ESP32-based robotics & mechatronics projects built with passion.</p>
 </section>
 
-<!-- About Me Section -->
 <section class="section clearfix">
-  <img src="assets/images/me.jpg" alt="Victor's Photo">
+  <img src="assets/images/me.jpg" alt="Photo of Me">
   <h2>About Me</h2>
-  <p>Hello! I’m Victor, a student passionate about robotics, mechatronics, and embedded systems. I love building ESP32-based robotic arms and experimenting with sensors and automation. This platform showcases my projects and progress in a clear and interactive way.</p>
+  <p>Hello! I’m Victor, a student passionate about robotics, embedded systems and automation. I build ESP32-based robotic arms and explore sensor systems and mechatronics. Vtr_Lab is my platform where I document my journey, share tutorials and showcase my builds.</p>
 </section>
 
-<!-- Platform Purpose Section -->
 <section class="section">
   <h2>Platform Purpose</h2>
-  <p>The purpose of Vtr_Lab is to share my mechatronics and ESP32-based robotics projects with the community. Here, you can explore project details, watch tutorials, and get inspired for your own builds. It also serves as a central hub to document my learning journey in robotics and embedded systems.</p>
+  <p>The purpose of Vtr_Lab is to bring together my project work into one place: detailed build logs, videos, downloadable files, and inspiration for other enthusiasts. Whether you’re exploring sensor integration, robotic arms, or ESP32 automation — you’ll find the content organized and accessible.</p>
 </section>
+
+<footer>
+  <p>Contact: <a href="mailto:your@email.com" style="color:#D6C179;">your@email.com</a></p>
+  <p>&copy; 2025 Vtr_Lab</p>
+</footer>
 
 <script>
 const select = document.getElementById('projectSelect');
-select.addEventListener('change', function() {
+select.addEventListener('change', function(){
   if(this.value) window.location.href = this.value;
 });
 </script>
