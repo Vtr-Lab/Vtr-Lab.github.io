@@ -1,7 +1,1 @@
-<div class="project-container" id="projects">
-  <div class="project">
-    <h2>ESP32 Robotic Arm</h2>
-    <p>5-DOF robotic arm powered by MG996R servos. Tutorial coming soon!</p>
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
-  </div>
-</div>
+
