@@ -108,4 +108,65 @@
       <option value="project2.html">Temperature Sensor Demo</option>
       <option value="project3.html">Light Following Robot</option>
       <option value="project4.html">Obstacle Avoidance Rover</option>
-      <option value="project5.html
+      <option value="project5.html">Servo Controlled Gripper</option>
+    </select>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>Welcome to Vtr_Lab</h1>
+  <p>Explore my ESP32-based robotics & mechatronics projects built with passion.</p>
+</section>
+
+<section class="section clearfix">
+  <img src="assets/me.png" alt="Photo of Me">
+  <h2>About Me</h2>
+  <p>Hello! I’m Victor, a 15-year-old robotics enthusiast from Taiwan. I’m a one-person team behind Vtr_Lab, where I design and build ESP32-based robotic arms, sensor projects, and mechatronics experiments. Vtr_Lab is my personal playground to explore, learn, and share everything I discover about robotics and automation. From coding microcontrollers to designing mechanical systems, I document my projects here so other enthusiasts can follow along and get inspired. Join me along the journey — dive into projects, watch tutorials, and explore the fascinating world of DIY robotics!</p>
+</section>
+
+<section class="section">
+  <h2>Platform Purpose</h2>
+  <p>The purpose of Vtr_Lab is to bring together my project work into one place: detailed build logs, videos, downloadable files, and inspiration for other enthusiasts. Whether you’re exploring sensor integration, robotic arms, or ESP32 automation — you’ll find the content organized and accessible.</p>
+</section>
+
+<!-- Visitor Counter Section -->
+<section class="section" style="text-align:center;">
+  <h2>Join Me on the Journey</h2>
+  <p style="max-width:600px; margin:0 auto 20px;">
+    This platform is where I share my creations, tutorials, and step-by-step guides — 
+    all free and open for anyone who wants to learn, build, and innovate alongside me.
+    Whether you’re curious, a beginner, or an enthusiast, you’re welcome here.
+  </p>
+  <div style="margin-top:30px;">
+    <p style="font-size:1.1em; color:#444; margin-bottom:8px;">You’re visitor number:</p>
+    <h3 id="visit-count" style="font-size:2.4em; color:#FF3E3E; font-weight:600;">Loading...</h3>
+  </div>
+</section>
+
+<footer>
+  <p>Contact: <a href="mailto:vcworkshop5127@email.com" style="color:#D6C179;">vcworkshop5127@email.com</a></p>
+  <p>&copy; 2025 Vtr_Lab</p>
+</footer>
+
+<script>
+  // Project dropdown navigation
+  const select = document.getElementById('projectSelect');
+  select.addEventListener('change', function(){
+    if(this.value) window.location.href = this.value;
+  });
+
+  // Visitor counter
+  const counterEl = document.getElementById('visit-count');
+  fetch('https://api.countapi.xyz/hit/vtr-lab.github.io/visits')
+    .then(res => res.json())
+    .then(res => {
+      counterEl.textContent = res.value.toLocaleString();
+    })
+    .catch(() => {
+      counterEl.textContent = "Error";
+    });
+</script>
+
+</body>
+</html>
+
