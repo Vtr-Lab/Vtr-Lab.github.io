@@ -73,6 +73,22 @@
       line-height: 1.6;
       margin-bottom: 20px;
     }
+    .download-btn {
+      display: inline-block;
+      background: #D6C179;
+      color: #2B2B2B;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-bottom: 20px;
+    }
+    .download-btn:hover {
+      background: #FF3E3E;
+      color: white;
+    }
     .back-link {
       display: inline-block;
       text-decoration: none;
@@ -114,16 +130,19 @@
 
   <!-- Material List -->
   <h2>Materials Needed</h2>
-  <ul>
+  <ul id="materials-list">
     <li>ESP32 Development Board</li>
     <li>MG996R Servo Motors (x4)</li>
     <li>MG90 Servo Motor (for claw)</li>
-    <li>Esp 32 micro-controller</li>
+    <li>ESP32 micro-controller</li>
     <li>Power Supply / Battery Pack</li>
     <li>PCA9685 servo controller</li>
     <li>Structural components (3D printed parts arm piece)</li>
     <li>Screws, nuts, and basic hardware</li>
   </ul>
+
+  <!-- Download Button -->
+  <button class="download-btn" id="downloadBtn">⬇️ Download Materials List</button>
 
   <!-- Description -->
   <h2>Project Overview</h2>
@@ -131,7 +150,7 @@
 
   <!-- Step by Step Tutorial -->
   <h2>Step-by-Step Tutorial</h2>
-  
+  <p>Coming soon...</p>
 
   <a class="back-link" href="projects.html">← Back to Projects</a>
 </section>
@@ -140,6 +159,25 @@
   <p>&copy; 2025 Vtr_Lab | All Rights Reserved</p>
 </footer>
 
+<!-- JavaScript for Download Function -->
+<script>
+  document.getElementById('downloadBtn').addEventListener('click', function() {
+    // Collect materials dynamically from the list
+    const items = Array.from(document.querySelectorAll('#materials-list li')).map(li => '- ' + li.textContent.trim());
+    const content = 'ESP32 Robotic Arm - Materials List\n\n' + items.join('\n');
+    
+    // Create a downloadable file
+    const blob = new Blob([content], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'ESP32_Robotic_Arm_Materials.txt';
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+</script>
+
 </body>
 </html>
+
 
