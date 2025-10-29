@@ -1,148 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VTR-Lab | Home</title>
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
-
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vtr_Lab | Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
+      font-family: 'Roboto', sans-serif;
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #0d1117;
-      color: #e6edf3;
+      background: #F8F8F8;
+      color: #2B2B2B;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2B2B2B;
+      padding: 15px 30px;
+    }
+    nav h1 {
+      font-family: 'Oxanium', sans-serif;
+      color: #D6C179;
+      font-size: 1.8rem;
+      margin: 0;
+    }
+    nav a, nav select {
+      font-family: 'Roboto', sans-serif;
+      color: #F8F8F8;
+      margin-left: 15px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    nav select {
+      background: #444;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+    }
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(135deg, #D6C179, #FF3E3E);
+      color: white;
+    }
+    .hero h1 {
+      font-family: 'Oxanium', sans-serif;
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+    }
+    .section {
+      width: 90%;
+      max-width: 1000px;
+      margin: 50px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .section img {
+      max-width: 200px;
+      float: right;
+      margin-left: 20px;
+      border-radius: 15px;
+    }
+    .section h2 {
+      font-family: 'Oxanium', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 15px;
+      background: linear-gradient(to right, #D6C179, #FF3E3E);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .section p {
       line-height: 1.6;
     }
-
-    header {
-      background: #161b22;
-      padding: 20px 0;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
     }
-
-    header h1 {
-      margin: 0;
-      color: #00eaff;
-      font-size: 2em;
-      letter-spacing: 1px;
-    }
-
-    nav {
-      margin-top: 10px;
-    }
-
-    nav a {
-      color: #e6edf3;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #00eaff;
-    }
-
-    .section {
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .section h2 {
-      color: #00eaff;
-      margin-bottom: 15px;
-    }
-
-    .section p {
-      color: #c9d1d9;
-      font-size: 1.1em;
-    }
-
     footer {
       text-align: center;
       padding: 20px;
-      background: #161b22;
-      color: #888;
       margin-top: 40px;
-    }
-
-    #visitor-section {
-      text-align: center;
-      margin: 40px 0;
-    }
-
-    #visitor-count {
-      font-size: 1.2em;
-      color: #eee;
-    }
-
-    #visitor-count span {
-      color: #00eaff;
-      font-weight: bold;
-    }
-
-    img.me {
-      width: 160px;
-      border-radius: 50%;
-      margin: 20px auto;
-      display: block;
-      box-shadow: 0 0 10px #00eaff44;
+      background: #2B2B2B;
+      color: #F8F8F8;
+      font-size: 0.9rem;
     }
   </style>
 </head>
-
 <body>
-  <header>
-    <h1>VTR-Lab</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
 
-  <section class="section">
-    <img src="assets/me.png" alt="Photo of Victor" class="me">
-    <h2>Welcome to VTR-Lab</h2>
-    <p>
-      This platform is where I document my mechatronic journey — building, experimenting, and learning along the way.
-      Here, you’ll find detailed step-by-step tutorials for my designed projects, all open and accessible to anyone
-      eager to learn and create. <br><br>
-      🚀 Join me along the journey as I explore the world of robotics, engineering, and design.
-    </p>
-  </section>
+<nav>
+  <h1>Vtr_Lab</h1>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+    <select id="projectSelect">
+      <option value="">-- Select Project --</option>
+      <option value="project1.html">ESP32 Robotic Arm</option>
+      <option value="project2.html">Temperature Sensor Demo</option>
+      <option value="project3.html">Light Following Robot</option>
+      <option value="project4.html">Obstacle Avoidance Rover</option>
+      <option value="project5.html">Servo Controlled Gripper</option>
+    </select>
+  </div>
+</nav>
 
-  <section class="section" id="visitor-section">
-    <p id="visitor-count">
-      🌍 Visitors so far: <span id="count">loading...</span>
-    </p>
-  </section>
+<section class="hero">
+  <h1>Welcome to Vtr_Lab</h1>
+  <p>Explore my ESP32-based robotics & mechatronics projects built with passion.</p>
+</section>
 
-  <footer>
-    <p>© 2025 VTR-Lab — Created and maintained by Victor</p>
-  </footer>
+<section class="section clearfix">
+  <img src="assets/me.png" alt="Photo of Me">
+  <h2>About Me</h2>
+  <p>Hello! I’m Victor, a 15-year-old robotics enthusiast from Taiwan. I’m a one-person team behind Vtr_Lab, where I design and build ESP32-based robotic arms, sensor projects, and mechatronics experiments. Vtr_Lab is my personal playground to explore, learn, and share everything I discover about robotics and automation. From coding microcontrollers to designing mechanical systems, I document my projects here so other enthusiasts can follow along and get inspired. Join me along the journey — dive into projects, watch tutorials, and explore the fascinating world of DIY robotics!</p>
+</section>
 
-  <script>
-    async function updateVisitorCount() {
-      const countElement = document.getElementById("count");
-      try {
-        const response = await fetch("https://api.countapi.xyz/hit/vtr-lab.github.io/visits");
-        const data = await response.json();
-        countElement.textContent = data.value;
-      } catch (error) {
-        countElement.textContent = "Error";
-        console.error(error);
-      }
-    }
-    updateVisitorCount();
-  </script>
+<section class="section">
+  <h2>Platform Purpose</h2>
+  <p>The purpose of Vtr_Lab is to bring together my project work into one place: detailed build logs, videos, downloadable files, and inspiration for other enthusiasts. Whether you’re exploring sensor integration, robotic arms, or ESP32 automation — you’ll find the content organized and accessible.</p>
+</section>
+
+<!-- Visitor Counter Section -->
+<section class="section" style="text-align:center;">
+  <h2>Join Me on the Journey</h2>
+  <p style="max-width:600px; margin:0 auto 20px;">
+    This platform is where I share my creations, tutorials, and step-by-step guides — 
+    all free and open for anyone who wants to learn, build, and innovate alongside me.
+    Whether you’re curious, a beginner, or an enthusiast, you’re welcome here.
+  </p>
+  <div style="margin-top:30px;">
+    <p style="font-size:1.1em; color:#444; margin-bottom:8px;">Number of Visits Worldwide:</p>
+    <h3 id="visit-count" style="font-size:2.4em; color:#FF3E3E; font-weight:600;">Loading...</h3>
+  </div>
+</section>
+
+<footer>
+  <p>Contact: <a href="mailto:vcworkshop5127@email.com" style="color:#D6C179;">vcworkshop5127@email.com</a></p>
+  <p>&copy; 2025 Vtr_Lab</p>
+</footer>
+
+<script>
+  // Project dropdown navigation
+  const select = document.getElementById('projectSelect');
+  select.addEventListener('change', function(){
+    if(this.value) window.location.href = this.value;
+  });
+
+  // Visitor counter using new namespace (to fix "Error")
+  const counterEl = document.getElementById('visit-count');
+  fetch('https://api.countapi.xyz/hit/vtr-lab/website')
+    .then(res => res.json())
+    .then(res => {
+      counterEl.textContent = res.value.toLocaleString();
+    })
+    .catch(() => {
+      counterEl.textContent = "Unavailable";
+    });
+</script>
+
 </body>
 </html>
-
 
 
