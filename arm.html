@@ -1,28 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Robotic Arm Project - Vtr_Lab</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      background-color: #0b0b0b;
-      color: sandybrown;
-      font-family: 'Orbitron', sans-serif;
-      text-align: center;
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background: #F8F8F8;
+      color: #2B2B2B;
     }
-    a {
-      color: #ff5555;
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2B2B2B;
+      padding: 15px 30px;
+    }
+    nav h1 {
+      font-family: 'Oxanium', sans-serif;
+      color: #D6C179;
+      font-size: 1.8rem;
+      margin: 0;
+    }
+    nav a {
+      font-family: 'Roboto', sans-serif;
+      color: #F8F8F8;
+      margin-left: 15px;
       text-decoration: none;
+      font-weight: 700;
+    }
+    nav a:hover { color: #D6C179; }
+    .project-container {
+      width: 90%;
+      max-width: 800px;
+      margin: 60px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .project-container h1 {
+      font-family: 'Oxanium', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      background: linear-gradient(to right, #D6C179, #FF3E3E);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .status {
+      font-weight: bold;
+      color: #D6C179;
+      margin-bottom: 20px;
+    }
+    .project-container p {
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .back-link {
+      display: inline-block;
+      text-decoration: none;
+      background: #FF3E3E;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .back-link:hover {
+      background: #D6C179;
+      color: #2B2B2B;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      background: #2B2B2B;
+      color: #F8F8F8;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-  <h1>Robotic Arm Project</h1>
-  <p>Status: ✅ In Progress</p>
-  <p>This robotic arm aims to replicate basic human-like movement using servos and sensors...</p>
-  <a href="projects.html">← Back to Projects</a>
+
+<nav>
+  <h1>Vtr_Lab</h1>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<section class="project-container">
+  <h1>ESP32 Robotic Arm</h1>
+  <p class="status">Status: ✅ In Progress</p>
+  <p>This robotic arm aims to replicate basic human-like movement using servos and sensors. Designed for multi-axis motion and potential wireless control.</p>
+  <a class="back-link" href="projects.html">← Back to Projects</a>
+</section>
+
+<footer>
+  <p>&copy; 2025 Vtr_Lab | All Rights Reserved</p>
+</footer>
+
 </body>
 </html>
+
