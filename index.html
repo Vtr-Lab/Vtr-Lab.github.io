@@ -108,6 +108,18 @@
       color: #F8F8F8;
       font-size: 0.9rem;
     }
+
+    /* Stylish counter title */
+    .visit-title {
+      font-family: 'Oxanium', sans-serif;
+      font-size: 1.6em;
+      font-weight: 700;
+      background: linear-gradient(to right, #D6C179, #FF3E3E);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+    }
+
   </style>
 </head>
 
@@ -154,8 +166,8 @@
       Whether you’re curious, a beginner, or an enthusiast, you’re welcome here.
     </p>
     <div style="margin-top:30px;">
-      <p style="font-size:1.1em; color:#444; margin-bottom:8px;">Number of Visits Worldwide:</p>
-      <h3 id="visit-count" style="font-size:2.4em; color:#FF3E3E; font-weight:600;">Loading...</h3>
+      <p class="visit-title">Number of Visits Worldwide:</p>
+      <h3 id="visit-count" style="font-size:2.4em; color:#FF3E3E; font-weight:700;">Loading...</h3>
     </div>
   </section>
 
@@ -171,7 +183,7 @@
       if(this.value) window.location.href = this.value;
     });
 
-    // Visitor Counter (Fixed Version)
+    // Visitor Counter (CountAPI fallback)
     const counterEl = document.getElementById('visit-count');
     fetch('https://api.countapi.xyz/update/vtr-lab.github.io/visits/?amount=1')
       .then(res => res.json())
