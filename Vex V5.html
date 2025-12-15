@@ -1,1 +1,174 @@
-67
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vtr_Lab | VEX V5</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background: #F8F8F8;
+      color: #2B2B2B;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2B2B2B;
+      padding: 15px 30px;
+    }
+
+    nav h1 {
+      font-family: 'Oxanium', sans-serif;
+      color: #D6C179;
+      font-size: 1.8rem;
+      margin: 0;
+    }
+
+    nav a,
+    nav select {
+      color: #F8F8F8;
+      margin-left: 15px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    nav select {
+      background: #444;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(135deg, #D6C179, #FF3E3E);
+      color: white;
+    }
+
+    .hero h1 {
+      font-family: 'Oxanium', sans-serif;
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    .section {
+      width: 90%;
+      max-width: 1000px;
+      margin: 50px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .section h2 {
+      font-family: 'Oxanium', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 15px;
+      background: linear-gradient(to right, #D6C179, #FF3E3E);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section p {
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      background: #2B2B2B;
+      color: #F8F8F8;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVIGATION -->
+  <nav>
+    <h1>Vtr_Lab</h1>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="Vex V5.html">VEX V5</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+      <select id="projectSelect">
+        <option value="">-- Select Project --</option>
+        <option value="project1.html">ESP32 Robotic Arm</option>
+        <option value="project2.html">Ball Balancing Machine</option>
+        <option value="project3.html">Line Tracer Bot</option>
+      </select>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1>VEX V5 Season</h1>
+    <p>Learn about our team, robot, and goals this season.</p>
+  </section>
+
+  <!-- TEAM INTRODUCTION -->
+  <section class="section">
+    <h2>Team Introduction</h2>
+    <p>
+      Welcome to our VEX robotics team! This season, we are focusing on building a pushback robot.
+      Each member contributes skills in mechanical design, programming, and strategy planning.
+    </p>
+  </section>
+
+  <!-- ROBOT OVERVIEW -->
+  <section class="section">
+    <h2>Robot Overview</h2>
+    <p>
+      Our robot features the VEX V5 system and a pushback mechanism. 
+      It is designed for efficiency, speed, and precision during competition.
+    </p>
+  </section>
+
+  <!-- SEASON GOALS -->
+  <section class="section">
+    <h2>Season Goals</h2>
+    <p>
+      Main objectives this season include:
+      <ul>
+        <li>Build a competitive pushback robot</li>
+        <li>Enhance autonomous programming skills</li>
+        <li>Collaborate effectively as a team</li>
+        <li>Participate in regional competitions</li>
+      </ul>
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      Contact:
+      <a href="mailto:your@email.com" style="color:#D6C179;">your@email.com</a>
+    </p>
+    <p>&copy; 2025 Vtr_Lab</p>
+  </footer>
+
+  <script>
+    // Project dropdown
+    document.getElementById('projectSelect').addEventListener('change', function () {
+      if (this.value) window.location.href = this.value;
+    });
+  </script>
+</body>
+
+</html>
+
