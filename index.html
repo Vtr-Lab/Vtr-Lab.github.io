@@ -164,37 +164,57 @@
 </footer>
 
 <script>
-/* Project selector navigation */
+/* Project selector */
 document.getElementById('projectSelect').addEventListener('change', function () {
   if (this.value) window.location.href = this.value;
 });
 
-/* Visitor Counter (counts once per session) */
+/* Robust Visitor Counter */
+async function fetchCount(url) {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error("Fetch failed");
+  return res.json();
+}
+
 async function updateVisitorCount() {
-  const counterKey = "vtr_lab_visited";
+  const visitsEl = document.getElementById("visits");
+  const sessionKey = "vtr_lab_visited";
+
+  visitsEl.textContent = "Loading...";
 
   try {
-    let apiURL = "https://api.countapi.xyz/get/vtr-lab.github.io/visits";
+    // Always try GET first
+    let data = await fetchCount(
+      "https://api.countapi.xyz/get/vtr-lab.github.io/visits"
+    );
 
-    if (!sessionStorage.getItem(counterKey)) {
-      apiURL = "https://api.countapi.xyz/hit/vtr-lab.github.io/visits";
-      sessionStorage.setItem(counterKey, "true");
+    // Only increment once per session
+    if (!sessionStorage.getItem(sessionKey)) {
+      data = await fetchCount(
+        "https://api.countapi.xyz/hit/vtr-lab.github.io/visits"
+      );
+      sessionStorage.setItem(sessionKey, "true");
     }
 
-    const response = await fetch(apiURL);
-    const data = await response.json();
-
-    document.getElementById("visits").textContent =
-      data.value.toLocaleString();
+    visitsEl.textContent = data.value.toLocaleString();
 
   } catch (err) {
-    document.getElementById("visits").textContent = "Unavailable";
+    // Retry once after short delay
+    setTimeout(async () => {
+      try {
+        const retry = await fetchCount(
+          "https://api.countapi.xyz/get/vtr-lab.github.io/visits"
+        );
+        visitsEl.textContent = retry.value.toLocaleString();
+      } catch {
+        visitsEl.textContent = "—";
+      }
+    }, 800);
   }
 }
 
 updateVisitorCount();
 </script>
-
 </body>
 </html>
 
