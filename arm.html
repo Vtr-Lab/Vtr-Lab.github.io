@@ -111,6 +111,19 @@
       color: #F8F8F8;
       font-size: 0.9rem;
     }
+    .video-container {
+  		position: relative;
+  		width: 100%;
+	  max-width: 1000px;   /* increase this to make it bigger */
+		margin: 0 auto;      /* center it */
+  		aspect-ratio: 16 / 9;
+		}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
   </style>
 </head>
 <body>
@@ -151,7 +164,7 @@
 
     <!-- Build Timelapse Section -->
   <h2>Build Timelapse</h2>
-  <p>Watch the timelapse video showing 3D printing of the robotic arm parts:</p>
+  <p>Watch the timelapse video on the 3D printed parts being designed in Fusion 360:</p>
 
   <div class="video-container">
     <iframe 
