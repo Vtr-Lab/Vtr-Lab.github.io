@@ -6,7 +6,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="AMzX9e-5Qv2Y0P-pfZcAa-4wdR7EM6t85p8c0u1YCEI" />
-  <title>Vtr_Lab | Home</title>
   <title>VTR Lab - Robotics Engineering Projects</title>
   <meta name="description" content="VTR Lab showcases robotics engineering projects including ESP32 robotic arms and other custom builds.">
   <!-- Google tag (gtag.js) -->
@@ -15,7 +14,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-EJH2GQX1Y9');
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -159,7 +157,7 @@
     <p>
       Hello! I’m Victor, a 15-year-old robotics enthusiast from Taiwan.
       I’m a one-person team behind Vtr_Lab, where I design and build ESP32-based
-      mechatronics projects. Join me on my journey by following me on instagram, 
+      mechatronics projects. Join me on my journey by following me on Instagram, 
       vtr_lab, or bookmark this website!
     </p>
   </section>
@@ -190,21 +188,34 @@
       if (this.value) window.location.href = this.value;
     });
 
-    // Visitor Counter (simple version)
-    async function updateVisitorCount() {
+    // Google Analytics Visitor Count (GA4)
+    async function fetchGAUsers() {
+      const GA_PROPERTY_ID = "YOUR_GA4_PROPERTY_ID"; // e.g., 123456789
+      const API_KEY = "YOUR_API_KEY"; // from Google Cloud
+
       try {
         const response = await fetch(
-          "https://api.countapi.xyz/hit/vtr-lab.github.io/visits"
+          `https://analyticsdata.googleapis.com/v1beta/properties/${GA_PROPERTY_ID}:runReport?key=${API_KEY}`,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              dateRanges: [{ startDate: "2025-01-01", endDate: "today" }],
+              metrics: [{ name: "totalUsers" }]
+            })
+          }
         );
+
         const data = await response.json();
-        document.getElementById("visits").textContent =
-          data.value.toLocaleString();
-      } catch (error) {
+        const totalUsers = data.rows ? data.rows[0].metricValues[0].value : "0";
+        document.getElementById("visits").textContent = parseInt(totalUsers).toLocaleString();
+      } catch (err) {
+        console.error("GA fetch error:", err);
         document.getElementById("visits").textContent = "Unavailable";
       }
     }
 
-    updateVisitorCount();
+    fetchGAUsers();
   </script>
 
 </body>
